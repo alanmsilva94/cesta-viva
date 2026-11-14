@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Painel · Cesta Viva</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <!-- ===== Acesso por PIN ===== -->
+  <div class="gate" id="gate" hidden>
+    <form class="gate-card" id="gate-form">
+      <img src="assets/favicon.svg" alt="" width="48" height="48">
+      <h1>Painel Cesta Viva</h1>
+      <p id="gate-msg" class="muted"></p>
+      <input type="password" id="gate-pin" inputmode="numeric" autocomplete="current-password" placeholder="PIN" minlength="4" maxlength="12" required>
+      <input type="password" id="gate-pin2" inputmode="numeric" autocomplete="new-password" placeholder="Repita o PIN" minlength="4" maxlength="12" hidden>
+      <p class="gate-err" id="gate-err" role="alert"></p>
+      <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+      <a href="index.html" class="small">← Voltar ao site</a>
+    </form>
+  </div>
+
+  <!-- ===== Aplicação ===== -->
+  <div class="app" id="app" hidden>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" title="Ver site"><img src="assets/favicon.svg" alt="" width="30" height="30"> Cesta Viva</a>
+      <nav>
+        <button data-view="dashboard" class="active">📊 <span>Visão geral</span></button>
+        <button data-view="leads">🧲 <span>Leads</span> <em class="count" id="count-leads"></em></button>
+        <button data-view="clients">🧺 <span>Clientes</span></button>
+        <button data-view="deliveries">🚚 <span>Entregas</span> <em class="count" id="count-deliveries"></em></button>
+        <button data-view="reminders">⏰ <span>Lembretes</span> <em class="count warn" id="count-reminders"></em></button>
+        <button data-view="settings">⚙️ <span>Dados</span></button>
+      </nav>
+      <button class="logout" id="logout">Sair</button>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+        <h1 id="view-title">Visão geral</h1>
+        <div class="top-actions" id="top-actions"></div>
+      </header>
+
+      <section class="view" data-view="dashboard"></section>
+      <section class="view" data-view="leads" hidden></section>
+      <section class="view" data-view="clients" hidden></section>
+      <section class="view" data-view="deliveries" hidden></section>
+      <section class="view" data-view="reminders" hidden></section>
+      <section class="view" data-view="settings" hidden></section>
+    </main>
+  </div>
+
+  <!-- ===== Modal: lead / cliente ===== -->
+  <dialog id="dlg-record">
+    <form method="dialog" id="record-form">
+      <header class="dlg-head"><h2 id="record-title">Novo lead</h2><button value="cancel" class="x" aria-label="Fechar">×</button></header>
+      <div class="dlg-body">
+        <div class="grid-2">
+          <label>Nome *<input name="name" required maxlength="80"></label>
+          <label>WhatsApp *<input name="phone" required inputmode="tel" placeholder="(11) 98765-4321"></label>
+          <label>E-mail<input name="email" type="email" maxlength="120"></label>
+          <label>Bairro<input name="neighborhood" maxlength="60"></label>
+        </div>
+        <label class="only-client">Endereço completo<input name="address" maxlength="160" placeholder="Rua, número, complemento"></label>
+        <div class="grid-3">
+          <label>Cesta<select name="size" id="sel-size"></select></label>
+          <label>Frequência<select name="frequency" id="sel-frequency"></select></label>
+          <label>Dia<select name="day" id="sel-day"></select></label>
+        </div>
+        <fieldset><legend>Preferências</legend><div class="checks" id="chk-preferences"></div></fieldset>
+        <fieldset><legend>Extras</legend><div class="checks" id="chk-extras"></div></fieldset>
+        <label>Restrições / observações<input name="notes" maxlength="200"></label>
+        <div class="grid-3 only-client">
+          <label>Status<select name="status">
+            <option value="ativo">Ativo</option><option value="pausado">Pausado</option><option value="cancelado">Cancelado</option>
+          </select></label>
+          <label>Pagamento<select name="payment">
+            <option value="pendente">Pendente</option><option value="em_dia">Em dia</option><option value="atrasado">Atrasado</option>
+          </select></label>
+          <label>Início<input name="startDate" type="date"></label>
+        </div>
+        <p class="dlg-total" id="record-total"></p>
+      </div>
+      <footer class="dlg-foot">
+        <button value="cancel" class="btn">Cancelar</button>
+        <button value="save" class="btn btn-primary" id="record-save">Salvar</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- ===== Modal: importar do WhatsApp ===== -->
+  <dialog id="dlg-import">
+    <form method="dialog" id="import-form">
+      <header class="dlg-head"><h2>Importar lead do WhatsApp</h2><button value="cancel" class="x" aria-label="Fechar">×</button></header>
+      <div class="dlg-body">
+        <p class="muted">Cole aqui a mensagem que o cliente enviou pelo site. O painel lê os campos e cria o lead sem digitar tudo de novo.</p>
+        <textarea name="text" rows="12" placeholder="Olá, Cesta Viva! Quero assinar a cesta 🧺&#10;&#10;Nome: ...&#10;WhatsApp: ..."></textarea>
+        <p class="gate-err" id="import-err" role="alert"></p>
+      </div>
+      <footer class="dlg-foot">
+        <button value="cancel" class="btn">Cancelar</button>
+        <button value="import" class="btn btn-primary">Ler mensagem</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

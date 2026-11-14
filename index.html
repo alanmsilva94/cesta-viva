@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cesta Viva — feira orgânica na sua porta</title>
+  <meta name="description" content="Assinatura de cestas de orgânicos de pequenos produtores. Monte seu plano em 1 minuto e receba em casa.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#montar">Pular para o formulário</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="logo" aria-label="Cesta Viva — início">
+        <img src="assets/favicon.svg" alt="" width="32" height="32"> Cesta Viva
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">☰</button>
+      <nav id="menu" class="menu">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="#montar" class="btn btn-sm">Montar meu plano</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="pill">🌱 Direto de pequenos produtores da região</span>
+          <h1>A feira orgânica chega na sua porta, <em>do jeito que a sua casa come.</em></h1>
+          <p class="lead">Sem acordar cedo no sábado, sem pagar caro no mercado e sem jogar comida fora. Você escolhe o tamanho da cesta, a frequência e o que não pode faltar.</p>
+          <div class="hero-cta">
+            <a href="#montar" class="btn btn-lg">Montar meu plano</a>
+            <a href="#como-funciona" class="btn btn-ghost btn-lg">Como funciona</a>
+          </div>
+          <ul class="hero-proof">
+            <li><strong>a partir de R$ 71</strong> por entrega</li>
+            <li><strong>colhido em até 48h</strong></li>
+            <li><strong>pausa quando quiser</strong></li>
+          </ul>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="basket">
+            <span style="--x:12%;--y:8%;--r:-12deg">🥬</span>
+            <span style="--x:46%;--y:0%;--r:8deg">🥕</span>
+            <span style="--x:72%;--y:12%;--r:18deg">🍅</span>
+            <span style="--x:24%;--y:34%;--r:6deg">🍌</span>
+            <span style="--x:56%;--y:30%;--r:-10deg">🥦</span>
+            <span style="--x:8%;--y:56%;--r:-4deg">🍋</span>
+            <span style="--x:40%;--y:58%;--r:12deg">🥚</span>
+            <span style="--x:70%;--y:52%;--r:-16deg">🍠</span>
+          </div>
+          <div class="tag tag-1">Entrega <strong>quinta</strong> · 8h–12h</div>
+          <div class="tag tag-2">✔ Sem agrotóxico</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOR -->
+    <section class="section pain">
+      <div class="container">
+        <h2 class="section-title">Comer bem não deveria dar tanto trabalho</h2>
+        <div class="cards-3">
+          <article class="card">
+            <span class="icon">⏰</span>
+            <h3>A feira é no horário errado</h3>
+            <p>Sábado às 7h, longe de casa. Quando você chega, as melhores bancas já acabaram.</p>
+          </article>
+          <article class="card">
+            <span class="icon">💸</span>
+            <h3>Orgânico no mercado é caro</h3>
+            <p>Embalado, viajado e com margem de três intermediários. Quem planta recebe pouco.</p>
+          </article>
+          <article class="card">
+            <span class="icon">🗑️</span>
+            <h3>Metade estraga na geladeira</h3>
+            <p>Compra no impulso, sem saber quanto a casa consome. Na próxima semana, vai pro lixo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Como funciona</h2>
+        <ol class="steps">
+          <li><span>1</span><h3>Monte seu plano</h3><p>Tamanho da cesta, frequência, dia de entrega e extras. Leva 1 minuto.</p></li>
+          <li><span>2</span><h3>Confirme no WhatsApp</h3><p>A gente tira suas dúvidas, combina o endereço e envia o link de pagamento.</p></li>
+          <li><span>3</span><h3>Receba e aproveite</h3><p>A cesta da estação chega no dia combinado. Pause ou troque quando quiser.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section id="planos" class="section">
+      <div class="container">
+        <h2 class="section-title">Escolha o tamanho da sua cesta</h2>
+        <p class="section-sub">Preço por entrega no plano mensal. No quinzenal você ganha 5% e no semanal 10% de desconto.</p>
+        <div class="plans" id="plan-cards"></div>
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO -->
+    <section id="montar" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Monte seu plano</h2>
+        <p class="section-sub">Sem compromisso: você confirma tudo no WhatsApp antes de pagar.</p>
+
+        <div class="builder">
+          <form id="plan-form" novalidate>
+            <fieldset>
+              <legend><span class="n">1</span> Tamanho da cesta</legend>
+              <div class="choice-grid" id="f-size"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n">2</span> Frequência</legend>
+              <div class="choice-grid" id="f-frequency"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n">3</span> Dia de entrega</legend>
+              <div class="choice-grid small" id="f-day"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n">4</span> O que não pode faltar? <small>(opcional)</small></legend>
+              <div class="chips" id="f-preferences"></div>
+              <label class="field">
+                <span>Restrições ou itens que você não come</span>
+                <input type="text" name="notes" maxlength="200" placeholder="Ex.: sem pimentão, alergia a amendoim">
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n">5</span> Extras para cada entrega <small>(opcional)</small></legend>
+              <div class="extras" id="f-extras"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n">6</span> Seus dados</legend>
+              <div class="row-2">
+                <label class="field">
+                  <span>Nome *</span>
+                  <input type="text" name="name" autocomplete="name" required maxlength="80">
+                </label>
+                <label class="field">
+                  <span>WhatsApp *</span>
+                  <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required placeholder="(11) 98765-4321">
+                </label>
+              </div>
+              <div class="row-2">
+                <label class="field">
+                  <span>E-mail</span>
+                  <input type="email" name="email" autocomplete="email" maxlength="120">
+                </label>
+                <label class="field">
+                  <span>Bairro *</span>
+                  <input type="text" name="neighborhood" required maxlength="60">
+                </label>
+              </div>
+              <label class="check">
+                <input type="checkbox" name="consent" required>
+                <span>Concordo em ser contatado pelo WhatsApp sobre a minha assinatura. Seus dados não são compartilhados.</span>
+              </label>
+            </fieldset>
+
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+            <button type="submit" class="btn btn-lg btn-block">Enviar e continuar no WhatsApp</button>
+          </form>
+
+          <aside class="summary" aria-live="polite">
+            <h3>Seu plano</h3>
+            <div id="summary-body"><p class="muted">Escolha o tamanho e a frequência para ver o valor.</p></div>
+          </aside>
+        </div>
+
+        <!-- sucesso -->
+        <div class="success" id="success" hidden tabindex="-1">
+          <div class="success-icon">🧺</div>
+          <h3>Pedido recebido, <span id="success-name"></span>!</h3>
+          <p>Agora é só confirmar com a gente pelo WhatsApp. A mensagem já vai pronta com o seu plano.</p>
+          <a class="btn btn-lg btn-wa" id="success-wa" target="_blank" rel="noopener">💬 Abrir WhatsApp</a>
+          <button type="button" class="btn btn-ghost" id="success-back">Montar outro plano</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Por que a Cesta Viva</h2>
+        <div class="cards-4">
+          <article class="card flat"><span class="icon">👩‍🌾</span><h3>Produtor recebe mais</h3><p>Compramos direto de famílias agricultoras, sem atravessador.</p></article>
+          <article class="card flat"><span class="icon">📦</span><h3>Embalagem retornável</h3><p>A caixa volta com a gente na entrega seguinte.</p></article>
+          <article class="card flat"><span class="icon">🍃</span><h3>Da estação</h3><p>O que está no auge da colheita: mais sabor e preço justo.</p></article>
+          <article class="card flat"><span class="icon">⏸️</span><h3>Sem fidelidade</h3><p>Viajou? Pause pelo WhatsApp. Cancelou? Sem multa.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section alt">
+      <div class="container narrow">
+        <h2 class="section-title">Dúvidas frequentes</h2>
+        <details><summary>O que vem na cesta?</summary><p>Uma seleção de frutas, legumes, verduras e temperos da estação. Na véspera da entrega mandamos a lista pelo WhatsApp e você pode trocar até 2 itens.</p></details>
+        <details><summary>Como eu pago?</summary><p>Depois de confirmar o plano no WhatsApp, você recebe um link de pagamento (Pix ou cartão). A cobrança é por ciclo de entregas.</p></details>
+        <details><summary>Quais bairros vocês atendem?</summary><p>Estamos começando por uma região pequena para garantir frescor. Informe seu bairro no formulário e confirmamos na conversa.</p></details>
+        <details><summary>Posso pausar ou cancelar?</summary><p>Sim, a qualquer momento e sem multa. Basta avisar até 2 dias antes da próxima entrega.</p></details>
+        <details><summary>E se eu não estiver em casa?</summary><p>Combinamos com a portaria ou um vizinho. A cesta é entregue em caixa térmica retornável.</p></details>
+      </div>
+    </section>
+
+    <section class="section cta-final">
+      <div class="container">
+        <h2>Sua primeira cesta pode chegar ainda esta semana.</h2>
+        <a href="#montar" class="btn btn-lg btn-light">Quero minha cesta</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p><strong>Cesta Viva</strong> · MVP de assinatura de orgânicos.</p>
+      <p><a id="footer-wa" target="_blank" rel="noopener">Fale no WhatsApp</a> · <a href="admin.html">Área do administrador</a></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" id="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">💬</a>
+
+  <script src="js/shared.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
