@@ -3,7 +3,7 @@
 > Feira orgânica de pequenos produtores entregue em casa, por assinatura.
 > MVP feito com **HTML, CSS e JavaScript puros**, sem framework, sem build e sem banco de dados próprio.
 
-**🔗 Aplicação publicada:** `https://SEU-USUARIO.github.io/cesta-viva/` *(troque pelo seu endereço depois de publicar; veja [Como publicar](#-como-publicar))*
+**🔗 Aplicação publicada:** https://alanmsilva94.github.io/cesta-viva/ · **Repositório:** https://github.com/alanmsilva94/cesta-viva
 
 ![Landing page](docs/screenshots/landing.png)
 
